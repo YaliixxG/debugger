@@ -5,3 +5,5 @@
 
 2. [Mac相关](https://github.com/YaliixxG/debugger/blob/master/aboutMac.md)
 
+3. [终端相关](https://github.com/YaliixxG/debugger/blob/master/aboutTerminal.md)
+
