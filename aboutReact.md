@@ -10,3 +10,6 @@
 答：引入`connect`,然后再在 `class XXX extends component`上面写`@connect`即可  
 
 ![示例](./imgs/react-01.png)
+
+4. ReactJs项目本地测试出错：*Failed to compile Module not found does not match the corresponding path on disk*
+答：看下是具体哪个文件不匹配名字，手动改下即可
