@@ -9,4 +9,4 @@
 3. 在dva中使用`this.props.dispatch`报错*_this.props.dispatch is not a function*  
 答：引入`connect`,然后再在 `class XXX extends component`上面写`@connect`即可  
 
-![示例](./imgs/react-01.jpg)
+![示例](./imgs/react-01.png)
