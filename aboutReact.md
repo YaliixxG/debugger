@@ -7,7 +7,7 @@
 2. *使用`ant-design`时，UI组件上设置`className={style.xxx}`时，样式无效*  
 答：如果是修改UI组件的样式，需设置为`className="xxx"`，在全局中修改即可生效（:global{...})  
 
-3. 在dva中使用`this.props.dispatch`报错*_this.props.dispatch is not a function*  
+3. *在dva中使用`this.props.dispatch`报错*_this.props.dispatch is not a function*  
 答：引入`connect`,然后再在 `class XXX extends component`上面写`@connect`即可  
 
 ![示例](./imgs/react-01.png)
@@ -65,4 +65,14 @@
       this.handleSelectKeys(nextProps.location.pathname)
     }
   }
+```
+
+7. *使用`antd`导航栏无选中效果*  
+答：检查没有效果的导航菜单项目，是不是`key`没有设置好。
+```js
+ <Menu.Item key="admin">
+      <Link to="/admin">
+        <Icon type="inbox" />
+        <span>管理</span></Link>
+ </Menu.Item>
 ```
