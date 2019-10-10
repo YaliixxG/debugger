@@ -1,3 +1,10 @@
+<!--
+ * @Description: In User Settings Edit
+ * @Author: your name
+ * @Date: 2019-07-05 09:34:56
+ * @LastEditTime: 2019-07-05 09:34:56
+ * @LastEditors: your name
+ -->
 ---
 title: React
 ---
@@ -140,4 +147,44 @@ this.setState({
 },() => {
   console.log('在这里写操作代码！')
 })
+```
+
+#### 10. 使用`Ant-Design`框架时，发现使用导航和路由进行页面跳转有一个 BUG，就是改变地址栏路由路径时，页面进行了跳转，但是导航的选择状态却没有  随之进行改变，这个要怎么解决呢？
+
+答：我们在`antd`的文档中可以发现`selectedKeys`的值是用来变化导航的选择状态的，它的值是一个数组，数组里面的值则是它导航当前选择的值，所以我们需要通过这个值来进行变化。
+
+-   点击时，通过改变`selectedKeys`来进行  变化
+-   改变路由路径时，通过在`componentDidMount`和`componentWillReceiveProps`中  来控制`selectedKeys`进行变化。
+
+```js
+     this.state = {
+          current: ''
+      };
+      ...
+    componentDidMount() {
+      const { pathname } = this.props.location;
+      this.handleSelectedKeys(pathname);
+  }
+
+  // 解决导航selectedKeys 与路由路径不匹配的问题
+  componentWillReceiveProps(nextProps) {
+
+      // 获取当前的路径
+      const { pathname } = this.props.location;
+
+      // 如果下一个props中获取的路径和当前的路径不一致，则通过handleSelectedKeys方法，来更改当前current
+      if (nextProps.location.pathname !== pathname) {
+          this.handleSelectedKeys(nextProps.location.pathname);
+      }
+  }
+
+  handleSelectedKeys = pathname => {
+      const temp = pathname.split('/');
+      
+      // 路径的长度小于2的话，则是代表现在是根路径，所以让其导航到首页
+      const key = temp && temp.length < 2 ? 'home' : temp[1];
+      this.setState({
+          current: key
+      });
+  };
 ```
