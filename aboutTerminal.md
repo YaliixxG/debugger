@@ -10,3 +10,6 @@ pakage.json文件中更改：
 答：This is an error with npm itself，使用`cnpm`或`yarn`试试  
 
 ![示例](./imgs/ter-02.jpg)
+
+#### 3. 报错 *engine "node" is incompatible with this module* 
+答：安装包工具的版本需要进行更新，与现在的module的版本不匹配。 
