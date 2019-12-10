@@ -251,4 +251,8 @@ document.getElementById('searchCategory').value = '';
 
 #### 15. `setState`以后，居然没有拿到值，是`undefined`？  
 
-答：可以检查下在函数里面更改state值时，是否没有正确拿到值了，这种情况很可能是函数的参数没有默认值，导致赋值出现`undefined`。
+答：可以检查下在函数里面更改state值时，是否没有正确拿到值了，这种情况很可能是函数的参数没有默认值，导致赋值出现`undefined`。  
+
+#### 16. `Invariant Violation: Element type is invalid: expected a string (for built-in components) or a class/function (for composite components) but got: undefined ...You likely forgot to export your component from the file it's defined in...`
+
+答：问题可能出在 `export` 或者 `export default`的用法搞混了，引入的 `{}` 要检查是否要加；另外还有可能是你的代码中间有一个元素是无效的，一个字符串或者一个类或函数命名出错。例如我这次就是解构写法写错了，导致了这个问题。
