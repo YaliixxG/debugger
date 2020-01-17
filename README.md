@@ -7,3 +7,5 @@
 
 3. [终端相关](https://github.com/YaliixxG/debugger/blob/master/aboutTerminal.md)
 
+3. [浏览器相关](https://github.com/YaliixxG/debugger/blob/master/aboutBrowsers.md)
+
