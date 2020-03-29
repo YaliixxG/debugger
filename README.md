@@ -11,3 +11,5 @@
 
 4. [D3相关](https://github.com/YaliixxG/debugger/blob/master/aboutD3.md)
 
+5. [TypeScript相关](https://github.com/YaliixxG/debugger/blob/master/aboutTypeScript.md)
+
